@@ -1,0 +1,29 @@
+cd /path/to/heya-project
+
+cat > .gitignore << 'EOF'
+# Secrets
+backend/.env
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
+frontend/dist/
+frontend/build/
+
+# Data (audio files, datasets — likely large)
+dataset/**/*.wav
+*.wav
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+EOF
