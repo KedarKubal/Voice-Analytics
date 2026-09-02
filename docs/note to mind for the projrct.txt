@@ -1,0 +1,16 @@
+we have to mind and add these thing to the dash board 
+
+critical behavioural and emotional signals—such as tone, pace, hesitation, interruptions, and vocal energy—are not visible to clients.
+
+
+librosa to derive MFCCs, pitch, energy, speaking rate, and pause patterns.
+
+Librosa library for python 
+
+
+
+we need emotion detection, sentiment trajectory, and acoustic stress indicators for the client side
+
+admin side we need all the the 7 metrices of analysis i mean the heya admin 
+
+

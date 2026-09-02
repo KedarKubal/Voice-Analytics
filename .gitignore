@@ -1,0 +1,59 @@
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+*.whl
+venv/
+env/
+.venv/
+.env.bak
+
+# ── Environment / secrets — NEVER commit these ───────────────────────────────
+.env
+.env.local
+.env.*.local
+*.env
+*_token.txt
+HF_TOKEN.txt
+*.key
+secrets.json
+
+# ── Node / frontend ──────────────────────────────────────────────────────────
+node_modules/
+dist/
+.cache/
+*.local
+
+# ── Database / data ──────────────────────────────────────────────────────────
+*.sqlite
+*.db
+*.sql.gz
+
+# ── ML / models ──────────────────────────────────────────────────────────────
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+models/
+chroma_store/
+*.npy
+*.pkl
+
+# ── IDE ──────────────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# ── Logs / temp ──────────────────────────────────────────────────────────────
+*.log
+*.tmp
+*.temp
+logs/

@@ -1,0 +1,236 @@
+/* ── Badges & buttons ─────────────────────────────────────────────────────── */
+
+.admin-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--accent2);
+  background: #818cf812;
+  border: 1px solid #818cf830;
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+.logout-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted2);
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.logout-btn:hover { border-color: var(--warn); color: var(--warn); }
+
+/* ── Tab switcher ─────────────────────────────────────────────────────────── */
+
+.admin-tabs {
+  display: flex;
+  gap: 3px;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  padding: 3px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  min-width: 0;
+}
+
+.admin-tab {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--muted2);
+  background: none;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.admin-tab:hover { color: var(--text); }
+.admin-tab-active {
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border2);
+}
+
+/* ── System status bar ────────────────────────────────────────────────────── */
+
+.sys-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 10px 0 14px;
+  border-bottom: 1px solid var(--border2);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.sys-indicator {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.sys-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.sys-online  { color: #22c55e; }
+.sys-online  .sys-dot { background: #22c55e; box-shadow: 0 0 6px #22c55e80; animation: pulse-green 2s infinite; }
+.sys-warning { color: #fbbf24; }
+.sys-warning .sys-dot { background: #fbbf24; box-shadow: 0 0 6px #fbbf2480; }
+.sys-critical{ color: #ef4444; }
+.sys-critical .sys-dot { background: #ef4444; box-shadow: 0 0 6px #ef444480; animation: pulse-red 1s infinite; }
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+@keyframes pulse-red {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.sys-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+/* ── God-view KPI grid ────────────────────────────────────────────────────── */
+
+.god-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.god-kpi {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 14px 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.god-kpi::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #818cf830, transparent);
+}
+
+.god-kpi-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.god-kpi-value {
+  font-family: 'Syne', system-ui, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.god-kpi-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+/* ── Client matrix table ──────────────────────────────────────────────────── */
+
+.god-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.god-table thead tr {
+  background: #ffffff04;
+  border-bottom: 1px solid var(--border2);
+}
+
+.god-table th {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-align: left;
+  padding: 10px 14px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.god-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #ffffff06;
+  vertical-align: middle;
+}
+
+.god-row {
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.god-row:hover     { background: #ffffff05; }
+.god-row-active    { background: #818cf80a !important; border-left: 2px solid var(--accent2); }
+.god-row:last-child td { border-bottom: none; }
+
+/* ── Health dot ───────────────────────────────────────────────────────────── */
+
+.health-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px currentColor;
+}
+
+/* ── Drill-down section ───────────────────────────────────────────────────── */
+
+.god-drill {
+  margin-top: 8px;
+  padding: 20px;
+  background: #0d0d14;
+  border: 1px solid #818cf820;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+/* ── Legacy helpers (used by client dashboard shared styles) ──────────────── */
+
+.clear-btn {
+  margin-left: 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--border2);
+  padding: 3px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.clear-btn:hover { color: var(--warn); border-color: var(--warn); }
